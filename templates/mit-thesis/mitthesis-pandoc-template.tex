@@ -1,0 +1,60 @@
+% Pandoc MIT Thesis Template
+% Maps YAML metadata from Markdown to MIT thesis cover page commands
+% Place this in templates/mit-thesis/mitthesis-pandoc-template.tex
+% Usage: pandoc input.md --template=templates/mit-thesis/mitthesis-pandoc-template.tex --pdf-engine=pdflatex
+
+\documentclass[twoside]{mitthesis}
+
+$if(lang)$
+  \selectlanguage{$lang$}
+$endif$
+
+% Metadata from YAML
+$if(title)$
+  \title{$title$}
+$endif$
+$if(author)$
+  \Author{$author$}$if(department)${$department$}$endif$
+$endif$
+$if(degree)$
+  \Degree{$degree$}$if(degree_department)${$degree_department$}$endif$
+$endif$
+$for(supervisors)$
+  \Supervisor{$supervisors.name$}$if(supervisors.title)${$supervisors.title$}$endif$
+$endfor$
+$for(acceptors)$
+  \Acceptor{$acceptors.name$}$if(acceptors.title)${$acceptors.title$}$endif$ $if(acceptors.role)${$acceptors.role$}$endif$
+$endfor$
+$if(degree_date_month)$$if(degree_date_year)$
+  \DegreeDate{$degree_date_month$}{$degree_date_year$}
+$endif$$endif$
+$if(thesis_date)$
+  \ThesisDate{$thesis_date$}
+$endif$
+
+\begin{document}
+\maketitle
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$if(toc)$
+  \tableofcontents
+$endif$
+$if(listoffigures)$
+  \listoffigures
+$endif$
+$if(listoftables)$
+  \listoftables
+$endif$
+
+$body$
+
+$if(bibliography)$
+\printbibliography
+$endif$
+
+\end{document}

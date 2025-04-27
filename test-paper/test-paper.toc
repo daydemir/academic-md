@@ -1,0 +1,5 @@
+\contentsline {frontmatter}{List of Figures}{7}{listoffigures}%
+\contentsline {frontmatter}{List of Tables}{9}{listoftables}%
+\contentsline {section}{\numberline {0.1}A Real Paper}{9}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}By a real person}{9}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Math time}{9}{subsection.0.1.2}%

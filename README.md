@@ -25,6 +25,60 @@ You will need the following installed on your computer:
 
 ---
 
+## Using the MIT Thesis Template
+
+This project includes a Pandoc/LaTeX template for generating MIT-style thesis documents from Markdown. To use it:
+
+```sh
+./export.sh <yourfile.md> --template=templates/mit-thesis/mitthesis-pandoc-template.tex
+```
+
+### Required YAML Metadata (Frontmatter)
+Below is a sample YAML block you should place at the top of your Markdown file. This metadata will be mapped to the MIT thesis cover page and other required fields:
+
+```yaml
+---
+title: "A Real Paper"
+author: "Deniz Aydemir"
+department: "System Design and Management"
+degree: "Master of Science in Engineering and Management"
+degree_department: "School of Engineering and the Sloan School of Management"
+supervisors:
+  - name: "Obi-Wan Kenobi"
+    title: "Master Jedi"
+acceptors:
+  - name: "Qui-Gon Jin"
+    title: "Master of the Force"
+    role: "Graduate Officer, Department of Research"
+degree_date_month: "June"
+degree_date_year: "2026"
+thesis_date: "May 18, 2026"  # Optional, for extra date display
+abstract: |
+  This is the abstract of the thesis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+toc: true               # Table of Contents
+listoffigures: true     # List of Figures
+listoftables: true      # List of Tables
+bibliography: references.bib  # Path to your .bib file
+---
+```
+
+#### Parameter Reference
+- `title`, `author`: Strings for the thesis title and author name.
+- `department`: Department granting the degree.
+- `degree`: The degree being awarded.
+- `degree_department`: School(s) awarding the degree.
+- `supervisors`: List of supervisors (`name` and `title`).
+- `acceptors`: List of thesis acceptors (`name`, `title`, and `role`).
+- `degree_date_month`, `degree_date_year`: Graduation date.
+- `thesis_date`: (Optional) Date of thesis submission.
+- `abstract`: Thesis abstract (use `|` for multiline).
+- `toc`, `listoffigures`, `listoftables`: Set to `true` to include those lists.
+- `bibliography`: Path to your BibTeX file for citations.
+
+> See `test-paper.md` for a complete example.
+
+---
+
 ## How to Use `export.sh`
 
 ```sh
@@ -37,6 +91,21 @@ You will need the following installed on your computer:
   - `<yourfile>/<yourfile>.epub`
 
 - The `--csl` argument is **optional**. If you do not specify it, Pandoc will use its default citation style (author-year or numeric, depending on your bibliography file and Pandoc version). To use a specific style (like Nature), pass `--csl=templates/nature.csl`.
+
+---
+
+## Why Use This in VS Code (and with AI Assistance)?
+
+- **Markdown-first, LaTeX-quality:** Write your thesis in Markdown for speed and simplicity, but export to a fully compliant MIT thesis PDF.
+- **AI-Assisted Writing:** VS Code (with extensions like GitHub Copilot, Codeium, or other AI tools) can help you:
+  - Generate and refactor Markdown or YAML frontmatter.
+  - Write and correct LaTeX math, tables, or code blocks with AI suggestions.
+  - Auto-complete citations and bibliography entries.
+  - Quickly reformat, summarize, or expand sections using AI chat.
+- **Seamless Export:** No need to manually edit `.tex` files—just update your Markdown and YAML, then export.
+- **Great for Collaboration:** Markdown is easy to diff, review, and edit with teammates or advisors.
+
+> **Tip:** If you want to use AI to help write LaTeX directly, you can open `.tex` files in VS Code and use AI tools there as well. This workflow is especially useful for combining Markdown-first writing with LaTeX's power, and for leveraging AI to speed up academic writing.
 
 ---
 
