@@ -19,6 +19,10 @@ You will need the following installed on your computer:
 - **Math support:** LaTeX math (inline `$...$` or display `$$...$$`) is rendered in all formats (PDF via LaTeX, HTML via MathJax, EPUB via MathML).
 - **Flexible writing:** Write in any Markdown editor, including VS Code and Obsidian.
 
+> **Warning:** If you need advanced LaTeX math or diagram features (such as TikZ, or other custom packages/macros), you will need to write those sections directly in `.tex` files and adapt this workflow. Markdown-based workflows and HTML/Markdown previews do **not** support full LaTeX (e.g., TikZ, xymatrix, or custom `.sty` files). For these cases, consider editing `.tex` files directly, or use VS Code's native LaTeX rendering with extensions like LaTeX Workshop for a better experience.
+
+
+
 ---
 
 ## How to Use `export.sh`

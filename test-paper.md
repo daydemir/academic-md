@@ -9,17 +9,13 @@ bibliography: references.bib
 
 Hello world. It is me.
 
-Keep writing
-  
-hello world
-
-hello again
-
-here is a url to [my website](https://denizaydemir.com/)
+here is a url to [a website](https://test.com/)
 
 and now insert a footnote[^1]
 
 now a bibliography reference [@bradleyEnrichedCategoryTheory2021].
+
+## Math time
 
 $A^2 = \frac{2}{3}$
 
